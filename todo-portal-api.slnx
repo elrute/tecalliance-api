@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TodoPortal.Api/TodoPortal.Api.csproj" />
+  <Project Path="TodoPortal.Application/TodoPortal.Application.csproj" Id="9ebe14b0-b215-4a53-ad51-c2097d95c09e" />
+  <Project Path="TodoPortal.Domain/TodoPortal.Domain.csproj" Id="c399dc02-2f71-4aea-82bb-25672a4d65d5" />
+  <Project Path="TodoPortal.Infrastructure/TodoPortal.Infrastructure.csproj" Id="9c3ad227-f9f0-4ad3-85ad-baba874febda" />
+</Solution>
