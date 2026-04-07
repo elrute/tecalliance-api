@@ -1,6 +1,4 @@
 using TodoPortal.Api.Middleware;
-using TodoPortal.Api.Time;
-using TodoPortal.Application.Abstractions;
 using TodoPortal.Application.UseCases.Todos.CreateTodo;
 using TodoPortal.Application.UseCases.Todos.DeleteTodo;
 using TodoPortal.Application.UseCases.Todos.GetTodoById;
@@ -14,8 +12,6 @@ using TodoPortal.Application.UseCases.Users.GetUsers;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-
-builder.Services.AddSingleton<IClock, SystemClock>();
 
 builder.Services.AddScoped<GetTodosHandler>();
 builder.Services.AddScoped<GetTodoByIdHandler>();
