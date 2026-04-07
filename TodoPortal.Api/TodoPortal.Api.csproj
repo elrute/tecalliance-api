@@ -4,11 +4,12 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>todo_portal_api</RootNamespace>
+    <RootNamespace>TodoPortal.Api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <ProjectReference Include="..\TodoPortal.Application\TodoPortal.Application.csproj" />
+    <ProjectReference Include="..\TodoPortal.Domain\TodoPortal.Domain.csproj" />
   </ItemGroup>
 
 </Project>
