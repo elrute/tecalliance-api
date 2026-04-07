@@ -30,9 +30,21 @@ builder.Services.AddScoped<GetUsersHandler>();
 builder.Services.AddScoped<GetUserByIdHandler>();
 builder.Services.AddScoped<GetUserTodosHandler>();
 
+var frontendOrigin = builder.Configuration.GetValue<string>("Cors:Frontend") ?? "http://localhost:4200";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevCors", policy =>
+        policy.WithOrigins(frontendOrigin)
+              .AllowAnyHeader()
+              .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.UseCors("DevCors");
 
 app.UseHttpsRedirection();
 
