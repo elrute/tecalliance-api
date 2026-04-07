@@ -8,10 +8,17 @@ using TodoPortal.Application.UseCases.Todos.ReplaceTodo;
 using TodoPortal.Application.UseCases.Users.GetUserById;
 using TodoPortal.Application.UseCases.Users.GetUserTodos;
 using TodoPortal.Application.UseCases.Users.GetUsers;
+using TodoPortal.Domain.Ports;
+using TodoPortal.Infrastructure.DataLoading;
+using TodoPortal.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+builder.Services.AddSingleton<JsonPlaceholderDataStore>();
+builder.Services.AddSingleton<IUserRepository, InMemoryUserRepository>();
+builder.Services.AddSingleton<ITodoRepository, InMemoryTodoRepository>();
 
 builder.Services.AddScoped<GetTodosHandler>();
 builder.Services.AddScoped<GetTodoByIdHandler>();
